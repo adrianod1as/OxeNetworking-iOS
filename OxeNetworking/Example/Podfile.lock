@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (5.2.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - OxeNetworking (0.5.0):
+    - Moya (~> 14.0)
+    - Result (~> 4.1)
+    - SwiftyJSON (~> 5.0)
+  - Result (4.1.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - OxeNetworking (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - Result
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  OxeNetworking:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  OxeNetworking: 2d35162f6816303a5c26d2a2cedca53cd7dc5c32
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: e052a9bcc5aec4d7e1018500c27ffd0b587ac3f5
+
+COCOAPODS: 1.9.3
