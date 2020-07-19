@@ -26,3 +26,17 @@ public extension Endpoint {
                         httpHeaderFields: httpHeaderFields)
     }
 }
+
+public extension TargetType {
+
+    var asMultiTarget: MultiTarget {
+        return MultiTarget(self)
+    }
+}
+
+public extension MoyaResult {
+
+    var asGenericMoyaDispatcherResult: GenericMoyaDispatcherResult {
+        return GenericMoyaDispatcherResult(result: self)
+    }
+}

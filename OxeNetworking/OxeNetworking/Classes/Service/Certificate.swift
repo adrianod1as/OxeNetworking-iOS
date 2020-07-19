@@ -89,3 +89,14 @@ public extension CertificateFileConvertible {
         return certificate
     }
 }
+
+public struct GenericCertificateFile: CertificateFileConvertible {
+
+    public let name: String
+    public let type: String
+
+    public init(name: String, type: String = "der") {
+        self.name = name
+        self.type = type
+    }
+}

@@ -13,8 +13,9 @@ import SwiftyJSON
 public class GenericMoyaDispatcher: Dispatcher {
 
     public var environment: Environment
-    public let requestHandler: RequestHandler
-    public let errorFilter: ErrorFilter
+    private let resultHandler: ResultHandler
+    private let errorFilter: ErrorFilter
+    private let interceptor: RequestInterceptor
 
     private lazy var sessionConfiguration: URLSessionConfiguration = {
         var configuration = URLSessionConfiguration.default
@@ -25,7 +26,7 @@ public class GenericMoyaDispatcher: Dispatcher {
     }()
 
     private lazy var session: Alamofire.Session = {
-        let session = Session(configuration: sessionConfiguration, interceptor: requestHandler,
+        let session = Session(configuration: sessionConfiguration, interceptor: interceptor,
                               serverTrustManager: environment.serverTrustManager)
         return session
     }()
@@ -38,10 +39,12 @@ public class GenericMoyaDispatcher: Dispatcher {
         return provider
     }()
 
-    public init(environment: Environment, requestHandler: RequestHandler, errorFilter: ErrorFilter) {
+    public init(environment: Environment, resultHandler: ResultHandler,
+                errorFilter: ErrorFilter, interceptor: RequestInterceptor) {
         self.environment = environment
-        self.requestHandler = requestHandler
+        self.resultHandler = resultHandler
         self.errorFilter = errorFilter
+        self.interceptor = interceptor
     }
 
     open func call(endpoint: TargetType, completion: @escaping Completion) {
@@ -49,15 +52,18 @@ public class GenericMoyaDispatcher: Dispatcher {
             completion(.success(response))
             return
         }
-        provider.request(MultiTarget(endpoint)) { originalResult in
-            let filteredResult = self.errorFilter.filterForErrors(in: originalResult)
-            self.session.setSharedCookies(for: filteredResult.success?.response?.url)
-            let response = originalResult.success ?? originalResult.failure?.response
-            let error = filteredResult.failure?.toAnyError.error
-            self.requestHandler.handleRequest(response: response, error: error) { _ in
-                completion(filteredResult)
-            }
+        provider.request(endpoint.asMultiTarget) { originalResult in
+            self.handle(originalResult: originalResult, completion: completion)
+        }
+    }
 
+    open func handle(originalResult: MoyaResult, completion: @escaping Completion) {
+        let filteredResult = errorFilter.filterForErrors(in: originalResult.asGenericMoyaDispatcherResult)
+        self.session.setSharedCookies(for: filteredResult.success?.response?.url)
+        let response = originalResult.success ?? originalResult.failure?.response
+        let error = filteredResult.failure?.toAnyError.error
+        self.resultHandler.handleRequest(response: response, error: error) { _ in
+            completion(filteredResult)
         }
     }
 

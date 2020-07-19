@@ -1,14 +1,14 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.2.2)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - OxeNetworking (0.1.1):
+  - OxeNetworking (0.1.2):
     - Moya (~> 14.0)
-    - Result (~> 4.1)
+    - Result (~> 5.0)
     - SwiftyJSON (~> 5.0)
-  - Result (4.1.0)
+  - Result (5.0.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -26,10 +26,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  OxeNetworking: a9bb723d8010f64cef5267c0921ec8a77cc03bd0
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  OxeNetworking: 055f2a2b88bed4da84016e6edd8643be2e1c0b7b
+  Result: ed341d2f236af425b803e690e9bd8fd0a0cb7c5a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
 PODFILE CHECKSUM: e052a9bcc5aec4d7e1018500c27ffd0b587ac3f5
