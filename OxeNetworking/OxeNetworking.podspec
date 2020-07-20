@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'OxeNetworking'
-    s.version          = '0.1.3'
+    s.version          = '0.1.4'
     s.summary          = 'OxeNetworking is a Networking layer helper.'
 
     # This description is used swito generate tags and improve search results.
@@ -33,7 +33,6 @@ Pod::Spec.new do |s|
 
     s.source_files = 'OxeNetworking/OxeNetworking/Classes/**/*'
     s.ios.source_files = 'OxeNetworking/Classes/**/*'
-    s.static_framework = true
     # s.resource_bundles = {
     #   'OxeNetworking' => ['OxeNetworking/Assets/*.png']
     # }

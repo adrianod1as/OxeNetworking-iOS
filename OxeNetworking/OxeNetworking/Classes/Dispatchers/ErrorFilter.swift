@@ -14,6 +14,25 @@ public protocol MoyaDispatcherResult {
     var result: MoyaResult { get  }
 }
 
+extension MoyaResult: MoyaDispatcherResult {
+
+    public var result: MoyaResult {
+        return self
+    }
+}
+
+public protocol MoyaDispatcherResponse {
+
+    var moyaResponse: Moya.Response { get }
+}
+
+extension Moya.Response: MoyaDispatcherResponse {
+
+    public var moyaResponse: Moya.Response {
+        return self
+    }
+}
+
 public struct GenericMoyaDispatcherResult: MoyaDispatcherResult {
 
     public let result: MoyaResult
@@ -31,5 +50,5 @@ public protocol ErrorFilter {
 
     func filterForErrors(in result: MoyaDispatcherResult) -> MoyaResult
 
-    func filterForErrors(in response: Moya.Response) throws -> Moya.Response
+    func filterForErrors(in response: MoyaDispatcherResponse) throws -> Moya.Response
 }

@@ -10,14 +10,14 @@ import Moya
 import Alamofire
 import SwiftyJSON
 
-public class GenericMoyaDispatcher: Dispatcher {
+open class GenericMoyaDispatcher: Dispatcher {
 
     public var environment: Environment
-    private let resultHandler: ResultHandler
-    private let errorFilter: ErrorFilter
-    private let interceptor: RequestInterceptor
+    public let resultHandler: ResultHandler
+    public let errorFilter: ErrorFilter
+    public let interceptor: RequestInterceptor
 
-    private lazy var sessionConfiguration: URLSessionConfiguration = {
+    public lazy var sessionConfiguration: URLSessionConfiguration = {
         var configuration = URLSessionConfiguration.default
         //        configuration.httpMaximumConnectionsPerHost = 1
         configuration.requestCachePolicy = environment.cachePolicy
@@ -25,13 +25,13 @@ public class GenericMoyaDispatcher: Dispatcher {
         return configuration
     }()
 
-    private lazy var session: Alamofire.Session = {
+    public lazy var session: Alamofire.Session = {
         let session = Session(configuration: sessionConfiguration, interceptor: interceptor,
                               serverTrustManager: environment.serverTrustManager)
         return session
     }()
 
-    private lazy var provider: MoyaProvider<MultiTarget> = {
+    public lazy var provider: MoyaProvider<MultiTarget> = {
         let endpointClosure = { (target: MultiTarget) -> Endpoint in
             return Endpoint.from(target: target, inEnvironment: self.environment)
         }
