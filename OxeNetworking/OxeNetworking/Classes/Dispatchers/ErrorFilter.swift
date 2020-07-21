@@ -33,15 +33,6 @@ extension Moya.Response: MoyaDispatcherResponse {
     }
 }
 
-public struct GenericMoyaDispatcherResult: MoyaDispatcherResult {
-
-    public let result: MoyaResult
-
-    public init(result: MoyaResult) {
-        self.result = result
-    }
-}
-
 public protocol ErrorFilter {
 
     func getDefaultError() -> Error

@@ -33,10 +33,3 @@ public extension TargetType {
         return MultiTarget(self)
     }
 }
-
-public extension MoyaResult {
-
-    var asGenericMoyaDispatcherResult: GenericMoyaDispatcherResult {
-        return GenericMoyaDispatcherResult(result: self)
-    }
-}
