@@ -18,7 +18,7 @@ public protocol Certificate {
 public extension Certificate {
 
     var allHostsMustBeEvaluated: Bool {
-        return true
+        return !evaluators.isEmpty
     }
 
     var secCertificates: [SecCertificate] {

@@ -30,7 +30,7 @@ public class Environment {
     // Initialize a new Environment
     public init(type: EnvironmentSpecifying, baseURL: URL? = nil, name: String, fixturesType: FixtureTypeSpecifying,
                 commonHeaders: Headers = [:], specificHeaders: SpecificHeaders = SpecificHeaders(),
-                serverTrustManager: ServerTrustManager = ServerTrustManager(evaluators: [:]),
+                serverTrustManager: ServerTrustManager = ServerTrustManager(allHostsMustBeEvaluated: false, evaluators: [:]),
                 cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalAndRemoteCacheData) {
         self.type = type
         self.name = name
@@ -52,7 +52,7 @@ public class Environment {
 
     public convenience init(type: EnvironmentSpecifying, fixturesType: FixtureTypeSpecifying,
                             commonHeaders: Headers = [:], specificHeaders: SpecificHeaders = SpecificHeaders(),
-                            serverTrustManager: ServerTrustManager = ServerTrustManager(evaluators: [:]),
+                            serverTrustManager: ServerTrustManager = ServerTrustManager(allHostsMustBeEvaluated: false, evaluators: [:]),
                             cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalAndRemoteCacheData) {
         self.init(type: type, baseURL: type.baseURL, name: type.name, fixturesType: fixturesType,
                   commonHeaders: commonHeaders, specificHeaders: specificHeaders,

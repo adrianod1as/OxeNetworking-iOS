@@ -22,10 +22,6 @@ public protocol Dispatcher: AnyObject {
 
 public extension Dispatcher {
 
-    var successufulStatusCodes: ClosedRange<Int> {
-        return 200...299
-    }
-
     func getDecodable<T: Decodable>(_ type: T.Type, from endpoint: TargetType, completion: @escaping GenericCompletion<T>) {
         getResponse(from: endpoint) { result in
             switch result {
