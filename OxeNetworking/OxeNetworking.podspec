@@ -31,15 +31,19 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '11.0'
     s.swift_version = '5.0'
 
-    s.source_files = 'OxeNetworking/OxeNetworking/Classes/**/*'
-    s.ios.source_files = 'OxeNetworking/Classes/**/*'
-    # s.resource_bundles = {
-    #   'OxeNetworking' => ['OxeNetworking/Assets/*.png']
-    # }
+    s.default_subspec = "Core"
 
-    # s.public_header_files = 'Pod/Classes/**/*.h'
-    # s.frameworks = 'UIKit', 'MapKit'
-    s.dependency 'Moya', '~> 14.0'
-    s.dependency 'SwiftyJSON', '~> 5.0'
-    s.dependency 'Result', '~> 5.0'
+    s.subspec "Core" do |ss|
+        ss.source_files  = 'Sources/OxeNetworking/**/*'
+        s.dependency 'Moya', '~> 14.0'
+        s.dependency 'SwiftyJSON', '~> 5.0'
+        s.dependency 'Result', '~> 5.0'
+
+    end
+
+    s.subspec "Rx" do |ss|
+        ss.source_files = "Sources/RxOxeNetworking/**/*"
+        ss.dependency "OxeNetworking/Core"
+        ss.dependency "RxSwift", "~> 5.0"
+    end
 end

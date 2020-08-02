@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'OxeNetworking_Example' do
   pod 'OxeNetworking', :path => '../'
+  pod 'OxeNetworking/Rx', :path => '../'
 
   target 'OxeNetworking_Tests' do
     inherit! :search_paths

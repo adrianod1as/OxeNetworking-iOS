@@ -9,9 +9,9 @@ import SwiftyJSON
 import Moya
 import Alamofire
 
-public extension Response {
+extension Response: DispatchingResponse {
 
-    func asDecodable<T: Decodable>(_ type: T.Type, from endpoint: TargetType, completion: @escaping GenericCompletion<T>) {
+    public func asDecodable<T: Decodable>(_ type: T.Type, from endpoint: TargetType, completion: @escaping GenericCompletion<T>) {
         do {
             let keypath = (endpoint as? KeyPathable)?.keyPathForData
             let decodable = try self.map(type, atKeyPath: keypath)
@@ -21,7 +21,7 @@ public extension Response {
         }
     }
 
-    func asJSON(from endpoint: TargetType, completion: @escaping GenericCompletion<Any>) {
+    public func asJSON(from endpoint: TargetType, completion: @escaping GenericCompletion<Any>) {
         do {
             completion(.success(try self.mapJSON()))
         } catch {
@@ -29,7 +29,7 @@ public extension Response {
         }
     }
 
-    func asSwiftyJSON(from endpoint: TargetType, completion: @escaping GenericCompletion<JSON>) {
+    public func asSwiftyJSON(from endpoint: TargetType, completion: @escaping GenericCompletion<JSON>) {
         guard let json = JSON.nonNullable(self.data) else {
             completion(.failure(MoyaError.jsonMapping(self).toAnyError))
             return

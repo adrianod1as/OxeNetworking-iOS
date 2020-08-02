@@ -18,7 +18,7 @@ public protocol MoyaDispatcher: Dispatcher {
     var sessionConfiguration: URLSessionConfiguration { get }
     var session: Alamofire.Session { get }
     var provider: MoyaProvider<MultiTarget> { get }
-    init(environment: Environment, resultHandler: ResultHandler,
+    init(environment: Environment, resultHandler: ResultHandler ,
          errorFilter: ErrorFilter, interceptor: RequestInterceptor)
     func handle(originalResult: MoyaResult, completion: @escaping Completion)
 }

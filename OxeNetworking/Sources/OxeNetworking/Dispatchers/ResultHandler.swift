@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-public protocol ResultHandler: Dispatcher {
+public protocol ResultHandler {
 
     func handleRequest(response: Response?, error: Error?, completion: @escaping GenericCompletion<Void>)
     func handleRequest(response: Response?, completion: @escaping GenericCompletion<Void>)

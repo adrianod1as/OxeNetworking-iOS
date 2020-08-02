@@ -15,6 +15,10 @@ extension Error {
     public var isTimeOut: Bool {
         return self._code == NSURLErrorTimedOut
     }
+
+    var asAnyError: AnyError {
+        return AnyError(self)
+    }
 }
 
 public extension MoyaError {
