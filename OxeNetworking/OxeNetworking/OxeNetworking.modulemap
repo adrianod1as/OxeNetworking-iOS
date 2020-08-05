@@ -1,0 +1,6 @@
+framework module OxeNetworking {
+  umbrella header "OxeNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}
