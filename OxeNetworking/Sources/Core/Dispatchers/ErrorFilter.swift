@@ -7,7 +7,6 @@
 
 import Foundation
 import Moya
-import Alamofire
 
 public protocol MoyaDispatcherResult {
 

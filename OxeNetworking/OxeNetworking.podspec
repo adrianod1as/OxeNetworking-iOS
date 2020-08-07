@@ -34,15 +34,14 @@ Pod::Spec.new do |s|
     s.default_subspec = "Core"
 
     s.subspec "Core" do |ss|
-        ss.source_files  = 'Sources/OxeNetworking/**/*'
+        ss.source_files  = 'Sources/Core/**/*'
         s.dependency 'Moya', '~> 14.0'
         s.dependency 'SwiftyJSON', '~> 5.0'
         s.dependency 'Result', '~> 5.0'
-
     end
 
     s.subspec "Rx" do |ss|
-        ss.source_files = "Sources/RxOxeNetworking/**/*"
+        ss.source_files = "Sources/Rx/**/*"
         ss.dependency "OxeNetworking/Core"
         ss.dependency "RxSwift", "~> 5.0"
     end
