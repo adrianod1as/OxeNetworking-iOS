@@ -37,7 +37,6 @@ Pod::Spec.new do |s|
         ss.source_files  = 'Sources/Core/**/*'
         s.dependency 'Moya', '~> 14.0'
         s.dependency 'SwiftyJSON', '~> 5.0'
-        s.dependency 'Result', '~> 5.0'
     end
 
     s.subspec "Rx" do |ss|

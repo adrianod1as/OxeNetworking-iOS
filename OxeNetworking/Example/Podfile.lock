@@ -7,19 +7,15 @@ PODS:
   - OxeNetworking (0.1.6):
     - Moya (~> 14.0)
     - OxeNetworking/Core (= 0.1.6)
-    - Result (~> 5.0)
     - SwiftyJSON (~> 5.0)
   - OxeNetworking/Core (0.1.6):
     - Moya (~> 14.0)
-    - Result (~> 5.0)
     - SwiftyJSON (~> 5.0)
   - OxeNetworking/Rx (0.1.6):
     - Moya (~> 14.0)
     - OxeNetworking/Core
-    - Result (~> 5.0)
     - RxSwift (~> 5.0)
     - SwiftyJSON (~> 5.0)
-  - Result (5.0.0)
   - RxSwift (5.1.1)
   - SwiftyJSON (5.0.0)
 
@@ -31,7 +27,6 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
-    - Result
     - RxSwift
     - SwiftyJSON
 
@@ -42,8 +37,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  OxeNetworking: f76ac67847ef87f0dfbf70412a00105ff552f1ad
-  Result: ed341d2f236af425b803e690e9bd8fd0a0cb7c5a
+  OxeNetworking: aa165a48b0d925e421eff52217a9d9813adde3f6
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 

@@ -7,17 +7,12 @@
 
 import Foundation
 import Moya
-import Result
 import Alamofire
 
 extension Error {
 
     public var isTimeOut: Bool {
         return self._code == NSURLErrorTimedOut
-    }
-
-    var asAnyError: AnyError {
-        return AnyError(self)
     }
 }
 
@@ -37,11 +32,6 @@ public extension MoyaError {
         default:
             return nil
         }
-    }
-
-    var toAnyError: AnyError {
-        let error = self.underlyingError ?? self
-        return AnyError(error)
     }
 }
 

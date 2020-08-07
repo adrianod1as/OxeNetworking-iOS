@@ -83,7 +83,7 @@ extension MoyaDispatcher {
         let filteredResult = errorFilter.filterForErrors(in: originalResult.result)
         self.session.setSharedCookies(for: filteredResult.success?.response?.url)
         let response = originalResult.success ?? originalResult.failure?.response
-        let error = filteredResult.failure?.toAnyError.error
+        let error = filteredResult.failure?.underlyingError
         self.resultHandler.handleRequest(response: response, error: error) { _ in
             completion(filteredResult)
         }

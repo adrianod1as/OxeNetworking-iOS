@@ -64,7 +64,7 @@ public extension Dispatcher {
             case .success(let response):
                 completion(.success(response))
             case .failure(let moyaError):
-                completion(.failure(moyaError.asAnyError))
+                completion(.failure(moyaError))
             }
         }
     }
@@ -74,8 +74,8 @@ public extension Dispatcher {
             switch result {
             case .success:
                 completion(.success(()))
-            case .failure(let anyError):
-                completion(.failure(anyError))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

@@ -7,12 +7,11 @@
 
 import Foundation
 import Moya
-import Result
 
 public typealias Headers = [String: String]?
 
 public typealias SpecificHeaders = [String: Headers]
 
-public typealias GenericCompletion<T> = (_ result: Swift.Result<T, AnyError>) -> Void
+public typealias GenericCompletion<T> = (_ result: Swift.Result<T, Error>) -> Void
 
 public typealias MoyaResult =  Swift.Result<Response, MoyaError>
