@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
     TODO: Add long description of the pod here.
     DESC
 
-    s.homepage         = 'https://bitbucket.org/ioasys/oxe-networking-ios/src/master/'
+    s.homepage         = 'https://github.com/adrianodiasx93/OxeNetworking-iOS'
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'Adriano Dias' => 'adrianodiasx93@gmail.com' }
-    s.source           = { :git => 'git@bitbucket.org:ioasys/oxe-networking-ios.git', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/adrianodiasx93/OxeNetworking-iOS.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
     s.ios.deployment_target = '11.0'
@@ -34,13 +34,15 @@ Pod::Spec.new do |s|
     s.default_subspec = "Core"
 
     s.subspec "Core" do |ss|
-        ss.source_files  = 'Sources/Core/**/*'
+        ss.source_files  = 'OxeNetworking/Sources/Core/**/*'
+        ss.ios.source_files = 'Sources/Core/**/*'
         s.dependency 'Moya', '~> 14.0'
         s.dependency 'SwiftyJSON', '~> 5.0'
     end
 
     s.subspec "Rx" do |ss|
-        ss.source_files = "Sources/Rx/**/*"
+        ss.source_files = "OxeNetworking/Sources/Rx/**/*"
+        ss.ios.source_files = "Sources/Rx/**/*"
         ss.dependency "OxeNetworking/Core"
         ss.dependency "RxSwift", "~> 5.0"
     end

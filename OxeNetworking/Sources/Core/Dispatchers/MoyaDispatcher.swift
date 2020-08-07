@@ -10,8 +10,7 @@ import Moya
 import Alamofire
 import SwiftyJSON
 
-public protocol MoyaDispatcher: Dispatcher {
-
+public protocol MoyaDispatcher: Dispatcher where DispatcherResponse == Moya.Response {
     var resultHandler: ResultHandler { get }
     var errorFilter: ErrorFilter { get }
     var interceptor: RequestInterceptor { get }
