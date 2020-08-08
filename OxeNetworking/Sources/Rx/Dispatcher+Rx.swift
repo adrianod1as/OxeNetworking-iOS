@@ -12,7 +12,7 @@ import SwiftyJSON
 
 public extension Reactive where Base: Dispatcher {
 
-    func call(endpoint: TargetType) -> Single<Base.DispatcherResponse> {
+    func call(endpoint: TargetType) -> Single<Moya.Response> {
         Single.create { [weak base] single in
             base?.call(endpoint: endpoint) { result in
                 switch result {
@@ -68,7 +68,7 @@ public extension Reactive where Base: Dispatcher {
         }
     }
 
-    func getResponse(from endpoint: TargetType) -> Single<Base.DispatcherResponse>  {
+    func getResponse(from endpoint: TargetType) -> Single<Moya.Response>  {
         Single.create { [weak base] single in
             base?.getResponse(from: endpoint) { result in
                 switch result {

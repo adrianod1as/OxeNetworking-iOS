@@ -11,13 +11,10 @@ import SwiftyJSON
 
 public protocol Dispatcher: AnyObject {
 
-    associatedtype DispatcherResponse: DispatchingResponse
-    associatedtype DisptacherError: Error
-
     var environment: Environment { get }
-    func call(endpoint: TargetType, completion: @escaping (_ result: Result<DispatcherResponse, DisptacherError>) -> Void)
+    func call(endpoint: TargetType, completion: @escaping Completion)
     func performRequest(from endpoint: TargetType, completion: @escaping GenericCompletion<Void>)
-    func getResponse(from endpoint: TargetType, completion: @escaping GenericCompletion<DispatcherResponse>)
+    func getResponse(from endpoint: TargetType, completion: @escaping GenericCompletion<Moya.Response>)
     func getDecodable<T: Decodable>(_ type: T.Type, from endpoint: TargetType, completion: @escaping GenericCompletion<T>)
     func getJSON(from endpoint: TargetType, completion: @escaping GenericCompletion<Any>)
     func getSwiftyJSON(from endpoint: TargetType, completion: @escaping GenericCompletion<JSON>)
@@ -58,7 +55,7 @@ public extension Dispatcher {
         }
     }
 
-    func getResponse(from endpoint: TargetType, completion: @escaping GenericCompletion<DispatcherResponse>) {
+    func getResponse(from endpoint: TargetType, completion: @escaping GenericCompletion<Moya.Response>) {
         call(endpoint: endpoint) { result in
             switch result {
             case .success(let response):
