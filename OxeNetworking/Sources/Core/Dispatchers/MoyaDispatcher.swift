@@ -55,16 +55,6 @@ public extension MoyaDispatcher {
     func handle(originalResult: MoyaResult, completion: @escaping Completion) {
         standardlyHandle(originalResult: originalResult, completion: completion)
     }
-
-    func getMock(from endpoint: TargetType) -> Response? {
-        guard environment.type.mayBeSimulated, environment.fixturesType.isJsonType else {
-            return nil
-        }
-        let statusCode = 200
-        let response = HTTPURLResponse(url: endpoint.baseURL, statusCode: statusCode, httpVersion: nil,
-                                       headerFields: (endpoint as? SampleHeadersReturning)?.sampleHeaders)
-        return Response(statusCode: statusCode, data: endpoint.sampleData, response: response)
-    }
 }
 
 extension MoyaDispatcher {
