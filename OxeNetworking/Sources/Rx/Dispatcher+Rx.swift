@@ -9,6 +9,7 @@ import Foundation
 import Moya
 import RxSwift
 import SwiftyJSON
+import Core
 
 public extension Reactive where Base: Dispatcher {
 

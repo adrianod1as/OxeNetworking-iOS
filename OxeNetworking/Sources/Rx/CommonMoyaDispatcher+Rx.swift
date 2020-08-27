@@ -7,5 +7,6 @@
 
 import Foundation
 import RxSwift
+import Core
 
 extension CommonMoyaDispatcher: ReactiveCompatible {}
