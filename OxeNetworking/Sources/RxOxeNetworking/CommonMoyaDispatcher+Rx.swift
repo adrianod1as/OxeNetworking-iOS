@@ -7,6 +7,6 @@
 
 import Foundation
 import RxSwift
-import Core
+import OxeNetworking
 
 extension CommonMoyaDispatcher: ReactiveCompatible {}

@@ -1,0 +1,2 @@
+github "Moya/Moya" ~> 14.0
+github "SwiftyJSON/SwiftyJSON" ~> 4.0

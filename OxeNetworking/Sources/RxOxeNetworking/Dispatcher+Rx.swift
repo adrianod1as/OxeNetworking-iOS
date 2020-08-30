@@ -9,7 +9,7 @@ import Foundation
 import Moya
 import RxSwift
 import SwiftyJSON
-import Core
+import OxeNetworking
 
 public extension Reactive where Base: Dispatcher {
 

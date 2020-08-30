@@ -12,10 +12,10 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "OxeNetworking",
-            targets: ["Core"]),
+            targets: ["OxeNetworking"]),
         .library(
             name: "RxOxeNetworking",
-            targets: ["Rx"]),
+            targets: ["RxOxeNetworking"]),
         
     ],
     dependencies: [
@@ -28,13 +28,13 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "Core",
+            name: "OxeNetworking",
             dependencies: ["Moya", "SwiftyJSON"]),
         .target(
-            name: "Rx",
-            dependencies: ["Core", .product(name: "RxMoya", package: "Moya")]),
+            name: "RxOxeNetworking",
+            dependencies: ["OxeNetworking", .product(name: "RxMoya", package: "Moya")]),
         .testTarget(
             name: "OxeNetworkingTests",
-            dependencies: ["Core"]),
+            dependencies: ["OxeNetworking"]),
     ]
 )

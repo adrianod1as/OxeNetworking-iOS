@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'OxeNetworking'
-    s.version          = '0.1.9'
+    s.version          = '0.2.0'
     s.summary          = 'OxeNetworking is a Networking layer helper.'
 
     # This description is used swito generate tags and improve search results.
@@ -31,19 +31,17 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '11.0'
     s.swift_version = '5.0'
 
-    s.default_subspec = "Core"
+    s.default_subspec = "OxeNetworking"
 
-    s.subspec "Core" do |ss|
-        ss.source_files  = 'OxeNetworking/Sources/Core/**/*'
-        ss.ios.source_files = 'Sources/Core/**/*'
+    s.subspec "OxeNetworking" do |ss|
+        ss.source_files  = 'Sources/OxeNetworking/**/*'
         s.dependency 'Moya', '~> 14.0'
         s.dependency 'SwiftyJSON', '~> 5.0'
     end
 
-    s.subspec "Rx" do |ss|
-        ss.source_files = "OxeNetworking/Sources/Rx/**/*"
-        ss.ios.source_files = "Sources/Rx/**/*"
-        ss.dependency "OxeNetworking/Core"
-        ss.dependency "RxSwift", "~> 5.0"
+    s.subspec "RxOxeNetworking" do |ss|
+        ss.source_files = 'Sources/RxOxeNetworking/**/*'
+        ss.dependency 'OxeNetworking/OxeNetworking'
+        ss.dependency 'RxSwift', '~> 5.0'
     end
 end
