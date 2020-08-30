@@ -9,7 +9,9 @@ import Foundation
 import Moya
 import RxSwift
 import SwiftyJSON
+#if !COCOAPODS
 import OxeNetworking
+#endif
 
 public extension Reactive where Base: Dispatcher {
 

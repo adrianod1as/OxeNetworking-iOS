@@ -7,6 +7,8 @@
 
 import Foundation
 import RxSwift
-import OxeNetworking
+#if !COCOAPODS
+  import OxeNetworking
+#endif
 
 extension CommonMoyaDispatcher: ReactiveCompatible {}

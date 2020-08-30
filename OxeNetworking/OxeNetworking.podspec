@@ -27,6 +27,9 @@ Pod::Spec.new do |s|
     s.author           = { 'Adriano Dias' => 'adrianodiasx93@gmail.com' }
     s.source           = { :git => 'https://github.com/adrianodiasx93/OxeNetworking-iOS.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+    s.pod_target_xcconfig = {
+         'OTHER_SWIFT_FLAGS' => '-DCOCOAPODS',
+    }
 
     s.ios.deployment_target = '11.0'
     s.swift_version = '5.0'
@@ -34,13 +37,15 @@ Pod::Spec.new do |s|
     s.default_subspec = "OxeNetworking"
 
     s.subspec "OxeNetworking" do |ss|
-        ss.source_files  = 'Sources/OxeNetworking/**/*'
+        ss.source_files  = 'OxeNetworking/Sources/OxeNetworking/**/*'
+        ss.ios.source_files  = 'Sources/OxeNetworking/**/*'
         s.dependency 'Moya', '~> 14.0'
         s.dependency 'SwiftyJSON', '~> 5.0'
     end
 
     s.subspec "RxOxeNetworking" do |ss|
-        ss.source_files = 'Sources/RxOxeNetworking/**/*'
+        ss.source_files = 'OxeNetworking/Sources/RxOxeNetworking/**/*'
+        ss.ios.source_files = 'Sources/RxOxeNetworking/**/*'
         ss.dependency 'OxeNetworking/OxeNetworking'
         ss.dependency 'RxSwift', '~> 5.0'
     end
