@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" "5.2.2"
+github "Moya/Moya" "14.0.0"
+github "ReactiveCocoa/ReactiveSwift" "6.3.0"
+github "ReactiveX/RxSwift" "5.1.1"
+github "SwiftyJSON/SwiftyJSON" "4.3.0"
