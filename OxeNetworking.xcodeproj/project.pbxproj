@@ -54,6 +54,12 @@
 		E141302424FBF0BB000D1E31 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E141302224FBF0BB000D1E31 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E141302624FBF0C0000D1E31 /* OxeNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1412F7224FBEF91000D1E31 /* OxeNetworking.framework */; };
 		E141302724FBF0C0000D1E31 /* OxeNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1412F7224FBEF91000D1E31 /* OxeNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1C5A49624FF3317002922BB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E141301824FBF09C000D1E31 /* Alamofire.framework */; };
+		E1C5A49724FF3317002922BB /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E141301824FBF09C000D1E31 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1C5A49824FF3317002922BB /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E141301A24FBF09C000D1E31 /* Moya.framework */; };
+		E1C5A49924FF3317002922BB /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E141301A24FBF09C000D1E31 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1C5A49A24FF3317002922BB /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E141301924FBF09C000D1E31 /* SwiftyJSON.framework */; };
+		E1C5A49B24FF3317002922BB /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E141301924FBF09C000D1E31 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,8 +106,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E1C5A49924FF3317002922BB /* Moya.framework in Embed Frameworks */,
 				E141302424FBF0BB000D1E31 /* RxSwift.framework in Embed Frameworks */,
+				E1C5A49724FF3317002922BB /* Alamofire.framework in Embed Frameworks */,
 				E141302724FBF0C0000D1E31 /* OxeNetworking.framework in Embed Frameworks */,
+				E1C5A49B24FF3317002922BB /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,8 +190,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C5A49824FF3317002922BB /* Moya.framework in Frameworks */,
 				E141302324FBF0BB000D1E31 /* RxSwift.framework in Frameworks */,
+				E1C5A49624FF3317002922BB /* Alamofire.framework in Frameworks */,
 				E141302624FBF0C0000D1E31 /* OxeNetworking.framework in Frameworks */,
+				E1C5A49A24FF3317002922BB /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
