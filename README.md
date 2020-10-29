@@ -44,8 +44,8 @@ The features are the following:
 * Interception and handling of requests and their results.
 * Default implementations for response mapping.
 * Filtering and mapping of errors.
-* Out of the box implementations for main class (Dispatcher).
-	* Using protocols and defined as open, which allows you either to create your own implementations or inherit and override the existing one.
+* Common implementation for main protocol `Dispatcher`.
+	* Using assisting protocols and defined as open, which allows you either to create your own implementations or inherit and override the existing one.
 * Facilitated certificate pinning.
 * Plenty of extensions.
 
@@ -118,7 +118,7 @@ import the framework with `import OxeNetworking`.
 
 ## Basic usage
 
-After some setup, using OxeNetworking is really simple. You can access an API like this:
+After [some setup](https://github.com/adrianodiasx93/TheFeels/blob/main/SETUP.md), using OxeNetworking is really simple. You can access an API like this:
 
 ```swift
 dispatcher.call(endpoint: MyTarget.myCase) { result in
