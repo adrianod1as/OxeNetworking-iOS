@@ -25,6 +25,7 @@
 * [Installation](#installation)
   * [Swift Package Manager](#swift-package-manager)
   * [Cocoapods](#cocoapods)
+* [Contributing](contributing)
 * [License](license)
   
 <!-- ABOUT THE PROJECT -->
@@ -54,7 +55,7 @@ The features are the following:
 
 ## Project status
 
-This project is actively under development, and is being used as a framework in my personal projects, as well my professional ones during my last job. Thus I consider it ready for production use.
+This project is actively under development, and is being used as a framework in personal projects, as well professional ones during our last job. Thus we consider it ready for production use.
 
 ## Installation
 
@@ -113,6 +114,30 @@ Then run `pod install`.
 
 In any file you'd like to use OxeNetworking in, don't forget to
 import the framework with `import OxeNetworking`.
+
+## Contributing
+
+Hey! Do you like OxeNetworking? Awesome! We could actually really use your help!
+
+Open source isn't just writing code. OxeNetworking could use your help with any of the
+following:
+
+- Finding (and reporting!) bugs.
+- New feature suggestions.
+- Answering questions on issues.
+- Documentation improvements.
+- Reviewing pull requests.
+- Helping to manage issue priorities.
+- Fixing bugs/new features.
+
+If any of that sounds cool to you, send a pull request!
+
+### Help us improve OxeNetworking documentation
+Whether you’re a core member or a user trying it out for the first time, you can make a valuable contribution to OxeNetworking by improving the documentation. Help us by:
+
+- sending us feedback about something you thought was confusing or simply missing
+- suggesting better wording or ways of explaining certain topics
+- sending us a pull request via GitHub
 
 ## License
 
