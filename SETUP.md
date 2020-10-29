@@ -80,3 +80,24 @@ public class TFResultHandler: ResultHandler {
 }
 ```
 ## ErrorFilter
+
+Objects conforming to this protocol will allow detecting errors in response initially assumed as successuful, as well map/translate the returning errors in custom errors implemented in your application. 
+
+```swift
+public func filterForErrors(in result: MoyaDispatcherResult) -> MoyaResult {
+    let localizedMessages = (result as? MyMoyaDispatcherResult)?.localizedMessages
+    let moyaError = result.result.failure
+    let underlyingResponse = result.result.success ?? moyaError?.response
+    do {
+        guard let response = underlyingResponse else {
+            let error = (moyaError?.underlyingError ?? moyaError) ?? getDefaultError()
+            return .failure(MoyaError.underlying(error.filter(), underlyingResponse))
+        }
+        let moyaDispatcherResponse = MyMoyaDispatcherResponse(moyaResponse: response,
+                                                              localizedMessages: localizedMessages!)
+        return .success(try filterForErrors(in: moyaDispatcherResponse))
+    } catch {
+        return .failure(MoyaError.underlying(error, underlyingResponse))
+    }
+}
+```
