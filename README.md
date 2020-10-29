@@ -24,6 +24,7 @@
 * [Installation](#installation)
   * [Swift Package Manager](#swift-package-manager)
   * [Cocoapods](#cocoapods)
+* [License](license)
   
 <!-- ABOUT THE PROJECT -->
 ## About the project
@@ -106,6 +107,10 @@ Then run `pod install`.
 
 In any file you'd like to use OxeNetworking in, don't forget to
 import the framework with `import OxeNetworking`.
+
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/adrianodiasx93/OxeNetworking/blob/main/LICENSE) for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
