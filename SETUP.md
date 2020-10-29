@@ -1,6 +1,6 @@
 # Basic Setup
 
-In order to perform API request, you must implement the protocol `Dispatcher`. You are welcome to create your own implementations, but we provide one we believe that will sufice common needs. By providing objects for our `Environment` class and a few protocols, you may initialize the `CommonMoyaDispatcher`. In the following sections, we will explore the dependencies of this class. 
+In order to perform API request, you must implement the protocol `Dispatcher`. You are welcome to create your own implementations, but we provide one we believe will suffice common needs. By providing objects for our `Environment` class and a few protocols, you may initialize the `CommonMoyaDispatcher`. In the following sections, we will explore the dependencies of this class.  
 
 ```swift
 open class CommonMoyaDispatcher: MoyaDispatcher {
@@ -32,16 +32,16 @@ public class Environment {
 
     public let fixturesType: FixtureTypeSpecifying // protocol to define how data is simulated
 
-    public var specificHeaders: SpecificHeaders // protocol to define headers to specific group of endpoints
+    public var specificHeaders: SpecificHeaders // protocol to define headers to a specific group of endpoints
 
     public var serverTrustManager: ServerTrustManager
 
 // ...
 ```
 
-The goal for this class is to be used to distinct the environment which the request is being performed. Its attributes will be used to modify requests and how responses are dealt with. There are multiple convenience inits to help initialize this class.
+The goal of this class is to be used to distinguish the environment in which the request is being performed. Its attributes will be used to modify requests and how responses are dealt with. There are multiple convenience inits to help initialize this class.
 
-It is also in the environment where you can easily setup certificate pinning. By either providing a direct implementation of the class `ServerTrustManager` or a implementation of the protocol `Certificate` (recommended), the pinning will be enabled. 
+It is also in the `Environment` where you can easily set up certificate pinning. By either providing a direct implementation of the class `ServerTrustManager` or an implementation of the protocol `Certificate` (recommended), the pinning will be enabled. 
 
 ## ResultHandler
 
@@ -81,7 +81,7 @@ public class TFResultHandler: ResultHandler {
 ```
 ## ErrorFilter
 
-Objects conforming to this protocol will allow detecting errors in response initially assumed as successuful, as well map/translate the returning errors in custom errors implemented in your application. 
+Objects conforming to this protocol will allow detecting errors in response initially assumed as successful, as well mapping/translating the returning errors in custom errors implemented in your application. 
 
 ```swift
 public func filterForErrors(in result: MoyaDispatcherResult) -> MoyaResult {
