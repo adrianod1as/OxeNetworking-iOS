@@ -20,6 +20,7 @@
 
 * [About the project](#about-the-project)
   * [Features](#features)
+* [Sample Projects](sample-projects)
 * [Project Status](#project-status)
 * [Installation](#installation)
   * [Swift Package Manager](#swift-package-manager)
@@ -46,9 +47,14 @@ The features are the following:
 * Facilitated certificate pinning.
 * Plenty of extensions.
 
+## Sample projects
+
+* [TheFeels](https://github.com/adrianodiasx93/TheFeels)
+* [UDTM](https://github.com/adrianodiasx93/udtm)
+
 ## Project status
 
-This project is actively under development, and is being used as framework in my personal projects, as well my professional ones during my last job. Thus I consider it ready for production use.
+This project is actively under development, and is being used as a framework in my personal projects, as well my professional ones during my last job. Thus I consider it ready for production use.
 
 ## Installation
 
