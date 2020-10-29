@@ -25,7 +25,8 @@
 * [Installation](#installation)
   * [Swift Package Manager](#swift-package-manager)
   * [Cocoapods](#cocoapods)
-* [Contributing](contributing)
+* [Basic usage](#basic-usage)
+* [Contributing](#contributing)
 * [License](license)
   
 <!-- ABOUT THE PROJECT -->
@@ -114,6 +115,31 @@ Then run `pod install`.
 
 In any file you'd like to use OxeNetworking in, don't forget to
 import the framework with `import OxeNetworking`.
+
+## Basic usage
+
+After some setup, using OxeNetworking is really simple. You can access an API like this:
+
+```swift
+dispatcher.call(endpoint: MyTarget.myCase) { result in
+    switch result {
+    case .success(let response):
+    	// Moya.Response
+    case .failure(let error):
+    	// MoyaError
+    }
+}
+```
+
+OxeNetworking also allows you to map the response in different formats.
+
+```swift
+dispatcher.getResponse(from: TargetType) { Result<Response, Error> in } // Filtered error when failure // Filtered error when .failure
+dispatcher.performRequest(from: TargetType) { (Result<Void, Error>) in }  // Ignoring response
+dispatcher.getDecodable(Decodable.Protocol, from: TargetType) { (Result<Decodable, Error>) in } // Response mapped to Decodable
+dispatcher.getJSON(from: TargetType) { (Result<Any, Error>) in } // Response mapped to dictionary
+dispatcher.getSwiftyJSON(from: TargetType) { (Result<JSON, Error>) in } // Response mapped to SwityJSON.JSON
+```
 
 ## Contributing
 
