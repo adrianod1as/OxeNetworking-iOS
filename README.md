@@ -15,10 +15,31 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-Even though there are many great networking libraries across our community, you still have to develop your own networking layer around it, which might be great for customization in the long run but demands some good effort in the beginning. This project intends to assist you in both. It provides an out of the box networking layer that can still be well customized for your own needs.
-
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Features](#features)
+  
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Even though there are many great networking libraries across our community, you still have to develop your own networking layer around it, which might be great for customization in the long run but demands some good effort in the beginning. This project intends to assist you in both. It provides an out of the box networking layer that can still be well customized for your own needs, and since it was developed using [Moya](https://github.com/Moya/Moya), you may use it its features as well [Alamofire's](https://github.com/Alamofire/Alamofire).
+
+<!-- Features -->
+### Features
+
+The features are the following:
+
+* Moya and Alamofire features.
+* Environment distinction.
+* Interception and handling of requests and their results.
+* Default implementations for response mapping.
+* Filtering and mapping of errors.
+* Out of the box implementations for main class (Dispatcher).
+	* Using protocols and defined as open, which allows you either to create your own implementations or inherit and override the existing one.
+* Facilitated certificate pinning.
+* Plenty of extensions.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
