@@ -30,3 +30,40 @@ The goal for this class is to be used to distinct the environment which the requ
 
 It is also in the environment where you can easily setup certificate pinning. By either providing a direct implementation of the class `ServerTrustManager` or a implementation of the protocol `Certificate` (recommended), the pinning will be enabled. 
 
+## ResultHandler
+
+By conforming to this protocol, you can intercept the result before it is returned to its caller (dispatcher methods that map the response). By doing this you will be able to handle results in specific ways. For instance you may navigate to a specific screen when the session expires or a breach is detected.
+
+```swift
+public class TFResultHandler: ResultHandler {
+
+    internal weak var coordinator: SignOutSceneCoordinating?
+
+    public init(coordinator: SignOutSceneCoordinating?) {
+        self.coordinator = coordinator
+    }
+
+    public func handleRequest(response: Response?, completion: @escaping GenericCompletion<Void>) {
+        completion(.success(()))
+    }
+
+    public func handleRequest(error: Error?, completion: @escaping GenericCompletion<Void>) {
+        guard let interactionError = error as? InteractionError else {
+            completion(.success(()))
+            return
+        }
+        switch interactionError {
+        case .expiredUserSession:
+            handleExpiredUserSession()
+            completion(.success(()))
+        default:
+            completion(.success(()))
+        }
+    }
+
+    private func handleExpiredUserSession() {
+        coordinator?.didSignOut()
+    }
+}
+```
+
