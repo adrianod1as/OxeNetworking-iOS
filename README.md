@@ -7,7 +7,7 @@
   <h3 align="center">OxeNetworking</h3>
 
   <p align="center">
-    A networking layer abstraction from a brazilian northeast child.
+    A networking layer abstraction from a Brazilian northeast child.
     <br />
   </p>
 </p>
@@ -56,7 +56,7 @@ The features are the following:
 
 ## Project status
 
-This project is actively under development, and is being used as a framework in personal projects, as well professional ones during our last job. Thus we consider it ready for production use.
+This project is actively under development and is being used as a framework in personal projects, as well in professional ones during our last job. Thus we consider it ready for production use.
 
 ## Installation
 
