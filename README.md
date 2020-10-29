@@ -22,6 +22,7 @@
   * [Features](#features)
 * [Project Status](#project-status)
 * [Installation](#installation)
+  * [Swift Package Manager](#swift-package-manager)
   * [Cocoapods](#cocoapods)
   
 <!-- ABOUT THE PROJECT -->
@@ -48,7 +49,7 @@ The features are the following:
 
 This project is actively under development, and is being used as framework in my personal projects, as well my professional ones during my last job. Thus I consider it ready for production use.
 
-## Instalation
+## Installation
 
 ### Swift Package Manager
 
