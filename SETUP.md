@@ -1,6 +1,19 @@
 # Basic Setup
 
-In order to perform API request, you must implement the protocol `Dispatcher`. You are welcome to create your own implementations, but we provide one we believe that will sufice common needs. By providing objects for our `Environment` class and a few protocols, you may initialize the `CommonMoyaDispatcher`. In the following sections, we will explore the dependencies of this class.
+In order to perform API request, you must implement the protocol `Dispatcher`. You are welcome to create your own implementations, but we provide one we believe that will sufice common needs. By providing objects for our `Environment` class and a few protocols, you may initialize the `CommonMoyaDispatcher`. In the following sections, we will explore the dependencies of this class. 
+
+```swift
+open class CommonMoyaDispatcher: MoyaDispatcher {
+
+    public var environment: Environment
+    public let resultHandler: ResultHandler
+    public let errorFilter: ErrorFilter
+    public let interceptor: RequestInterceptor
+
+//...
+```
+
+For information on the [RequestInterceptor](https://github.com/Alamofire/Alamofire/blob/master/Source/RequestInterceptor.swift), please consult [Alamofire](https://github.com/Alamofire/Alamofire).
 
 ## Environment
 
@@ -66,4 +79,4 @@ public class TFResultHandler: ResultHandler {
     }
 }
 ```
-
+## ErrorFilter
